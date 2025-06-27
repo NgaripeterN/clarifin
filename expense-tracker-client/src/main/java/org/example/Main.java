@@ -11,7 +11,9 @@ public class Main extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        stage.setTitle("Expense Tracker");
+        stage.setTitle("ClariFin");
+        stage.setWidth(950);  // Set custom width
+        stage.setHeight(850);
         ViewNavigator.setMainStage(stage);
         new LoginView().show();
     }

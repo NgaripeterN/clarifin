@@ -20,6 +20,28 @@ GridPane {
 } */
 
 /* generic classes */
+/* for debugging */
+/* Label, TextField, Button, PasswordField, ComboBox, DatePicker{
+    -fx-border-width: 1px;
+    -fx-border-color: #fff;
+} */
+
+/* VBox {
+    -fx-border-width: 1px;
+    -fx-border-color: red;
+}
+
+HBox {
+    -fx-border-width: 1px;
+    -fx-border-color: blue;
+}
+
+GridPane {
+    -fx-border-width: 1px;
+    -fx-border-color: green;
+} */
+
+/* generic classes */
 Button{
     -fx-cursor: hand;
 }
@@ -32,7 +54,7 @@ Button:hover{
 /* to solve the issue with removing the default background color of the scrollpane */
 ScrollPane,
 ScrollPane > .viewport {
-   -fx-background-color: transparent;
+    -fx-background-color: transparent;
 }
 
 /* table */
@@ -160,11 +182,109 @@ ScrollPane > .viewport {
 }
 
 
+/* ---- Add this to your style.css file ---- */
 
+.add-button-green {
+    /* Set the background color to green */
+    -fx-background-color: #4CAF50;
 
+    /* Set the text color to white for better contrast */
+    -fx-text-fill: white;
 
+    /* Make the '+' symbol a bit bigger and bolder */
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
 
+    /* Adjust padding to make the button more "boxy" */
+    -fx-padding: 5px 15px;
 
+    /* This uses your existing class for rounded corners */
+    -fx-background-radius: 10px;
+}
 
+/* Optional: Add hover and pressed effects for better feedback */
+.add-button-green:hover {
+    -fx-background-color: #45a049; /* A slightly darker green */
+}
 
+.add-button-green:pressed {
+    -fx-background-color: #3e8e41; /* An even darker green */
+}
 
+/* Ensures the TextField/PasswordField has a transparent background
+   so the HBox's background shows through */
+.transparent-background {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+    -fx-padding: 0; /* Remove default padding of TextField/PasswordField */
+}
+
+/* Style for the HBox that contains the icon and the text field */
+.field-with-icon {
+    -fx-padding: 10px 15px; /* Add padding to the container */
+}
+
+/* Style for the ImageView (icon) itself to add right padding */
+.icon-field {
+    -fx-padding: 0 10px 0 0; /* Padding on the right of the icon */
+    -fx-alignment: center; /* Center the icon vertically */
+}
+
+/* Override default styling for TextField/PasswordField to ensure it doesn't add extra borders */
+.text-field, .password-field {
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+    -fx-border-color: transparent;
+    -fx-border-width: 0;
+}
+
+.root-split-container {
+    /* No specific background here, children will define it */
+}
+
+/* Styles for the left side of the split layout */
+.left-side-blue {
+    -fx-background-color: #1A2B5B; /* Changed to a darker shade of blue (Navy Blue) */
+    -fx-padding: 20px; /* Add some internal spacing */
+}
+
+/* Styles for the right side of the split layout */
+.right-side-white {
+    -fx-background-color: #F5F5F5; /* A duller, off-white shade (was #FFFFFF) */
+    -fx-padding: 20px; /* Add some internal spacing */
+    -fx-border-color: #E0E0E0; /* Optional: subtle border to visually separate */
+    -fx-border-width: 0 0 0 1px; /* Only a left border */
+}
+
+/* Adjusting elements within the right-side-white for better contrast on a white background */
+.right-side-white .text-light-gray {
+    -fx-text-fill: #555555; /* Darker grey for text on white background */
+}
+
+.right-side-white .field-background {
+    -fx-background-color: #E8E8E8; /* Lighter field background for white section (slightly adjusted from F0F0F0) */
+    -fx-border-color: #CCCCCC; /* Subtle border for fields on white background */
+    -fx-border-width: 1px; /* Apply the border */
+}
+
+/* Ensure the transparent background is still applied within the field-background for the HBox */
+.right-side-white .transparent-background {
+    -fx-background-color: transparent;
+}
+.welcome-message {
+    -fx-font-size: 45px; /* Adjusted font size (was 48px) */
+    -fx-font-weight: 450; /* Medium weight */
+    -fx-text-fill: #FFFFFF; /* White text for visibility on blue background */
+    -fx-text-alignment: center; /* Center the text */
+}
+
+.right-side-intro-message {
+    -fx-font-size: 30px; /* Slightly larger for more presence (was 28px) */
+    -fx-font-weight: 600; /* Bolder weight for more impact (was 400) */
+    -fx-text-fill: #333333; /* Darker text for good contrast on the dull white background */
+    -fx-text-alignment: center; /* Center the text for better presentation */
+    -fx-padding: 0 40px 30px 40px; /* Add padding to prevent it from touching edges and separate from form */
+    -fx-line-spacing: 10px; /* Increased line spacing for better readability and 'airy' feel (was 5px) */
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 5, 0, 0, 2); /* Subtle text shadow for depth */
+}
